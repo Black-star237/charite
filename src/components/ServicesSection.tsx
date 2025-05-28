@@ -2,6 +2,7 @@
 import React from 'react';
 import { Heart, Gift, HandHeart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const ServicesSection = () => {
   const services = [
@@ -11,7 +12,8 @@ const ServicesSection = () => {
       title: 'Devenir bénévole',
       description: 'Rejoignez notre équipe de bénévoles et aidez directement sur le terrain. Votre temps peut tout changer.',
       buttonText: 'Je veux aider',
-      buttonColor: 'bg-charity-blue hover:bg-blue-600'
+      buttonColor: 'bg-charity-blue hover:bg-blue-600',
+      link: '/contact'
     },
     {
       icon: Gift,
@@ -19,7 +21,8 @@ const ServicesSection = () => {
       title: 'Collecte de fonds rapide',
       description: 'Organisez votre propre collecte de fonds en ligne. Ensemble, nous pouvons accomplir davantage.',
       buttonText: 'Organiser une collecte',
-      buttonColor: 'bg-charity-orange hover:bg-orange-600'
+      buttonColor: 'bg-charity-orange hover:bg-orange-600',
+      link: '/contact'
     },
     {
       icon: HandHeart,
@@ -27,7 +30,8 @@ const ServicesSection = () => {
       title: 'Commencer à donner',
       description: 'Faites un don aujourd\'hui et voyez immédiatement l\'impact de votre générosité sur nos bénéficiaires.',
       buttonText: 'Faire un don',
-      buttonColor: 'bg-charity-green hover:bg-green-600'
+      buttonColor: 'bg-charity-green hover:bg-green-600',
+      link: '/donate'
     }
   ];
 
@@ -55,9 +59,11 @@ const ServicesSection = () => {
                   {service.description}
                 </p>
                 
-                <Button className={`${service.buttonColor} text-white px-6 py-3 rounded-full font-medium w-full group-hover:shadow-lg transition-all duration-300`}>
-                  {service.buttonText}
-                </Button>
+                <Link to={service.link}>
+                  <Button className={`${service.buttonColor} text-white px-6 py-3 rounded-full font-medium w-full group-hover:shadow-lg transition-all duration-300`}>
+                    {service.buttonText}
+                  </Button>
+                </Link>
               </div>
             );
           })}

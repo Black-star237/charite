@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { GraduationCap, Droplets, Heart, Stethoscope } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const DonationSection = () => {
   const causes = [
@@ -80,9 +81,11 @@ const DonationSection = () => {
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
               Votre don signifie beaucoup pour eux. Faites un don selon vos moyens.
             </p>
-            <Button className="bg-white text-charity-blue hover:bg-gray-100 px-8 py-4 rounded-full font-medium text-lg">
-              Commencer à Donner Maintenant
-            </Button>
+            <Link to="/donate">
+              <Button className="bg-white text-charity-blue hover:bg-gray-100 px-8 py-4 rounded-full font-medium text-lg">
+                Commencer à Donner Maintenant
+              </Button>
+            </Link>
           </div>
           
           {/* Decorative elements */}

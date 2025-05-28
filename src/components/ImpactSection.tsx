@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const ImpactSection = () => {
   const campaigns = [
@@ -91,9 +92,11 @@ const ImpactSection = () => {
                   </div>
                 </div>
                 
-                <Button className={`${campaign.color} hover:opacity-90 text-white w-full py-3 rounded-full font-medium`}>
-                  Faire un Don
-                </Button>
+                <Link to="/donate">
+                  <Button className={`${campaign.color} hover:opacity-90 text-white w-full py-3 rounded-full font-medium`}>
+                    Faire un Don
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}
@@ -101,9 +104,11 @@ const ImpactSection = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <Button className="bg-charity-orange hover:bg-orange-600 text-white px-8 py-4 rounded-full font-medium text-lg">
-            Voir Toutes les Campagnes
-          </Button>
+          <Link to="/projects">
+            <Button className="bg-charity-orange hover:bg-orange-600 text-white px-8 py-4 rounded-full font-medium text-lg">
+              Voir Toutes les Campagnes
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
